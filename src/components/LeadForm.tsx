@@ -43,30 +43,31 @@ export default function LeadForm() {
 
     setStatus("submitting");
 
-    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
-    const hasRealEndpoint = !!endpoint && !endpoint.includes("REPLACE_ME");
-
-    fd.append("lead_source", "AQE Preview Site");
-
-    // Path 1 — Formspree endpoint configured: POST and we're done.
-    if (hasRealEndpoint) {
-      try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: fd,
-        });
-        if (!res.ok) throw new Error(`Submission failed (${res.status})`);
+    // Path 1 — server-side API route → GitHub Issues in private leads repo.
+    // This is the production path; the API route holds the GH token server-side.
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          service,
+          zip,
+          source: "AQE Preview Site",
+        }),
+      });
+      if (res.ok) {
         setStatus("success");
-      } catch (err) {
-        setStatus("error");
-        setError(err instanceof Error ? err.message : "Something went wrong.");
+        return;
       }
-      return;
+      // 503 = endpoint exists but env vars missing; fall through to mailto.
+      // 4xx/5xx for other reasons → also fall through so the lead still reaches a human.
+    } catch {
+      // Network error → fall through to mailto.
     }
 
-    // Path 2 — fallback to mailto so the lead actually reaches a human while
-    // Formspree is being set up. Opens the visitor's mail app pre-filled.
+    // Path 2 — mailto fallback. Lead still reaches julian.saidi2008@gmail.com.
     try {
       const subject = encodeURIComponent(
         `New AQE lead — ${service} — ${name}`
@@ -83,7 +84,6 @@ export default function LeadForm() {
         ].join("\n")
       );
       window.location.href = `mailto:${FALLBACK_LEAD_EMAIL}?subject=${subject}&body=${body}`;
-      // Give the email client a beat to open before we flip the UI.
       await new Promise((r) => setTimeout(r, 400));
       setViaMailto(true);
       setStatus("success");
