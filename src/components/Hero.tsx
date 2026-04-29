@@ -28,7 +28,7 @@ export default function Hero() {
               <br />
               Fixed today.
               <br className="md:hidden" />
-              <span className="text-brand md:ml-[0.4ch]">By Shai personally.</span>
+              <span className="text-brand md:ml-[0.4ch]">Shai answers personally.</span>
             </h1>
 
             <p className="mt-6 text-[17px] md:text-[19px] text-charcoal leading-[1.55] max-w-[58ch] text-pretty">

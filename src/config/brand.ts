@@ -4,7 +4,7 @@
 export const brand = {
   name: "All Quality Electrical",
   shortName: "AQE",
-  tagline: "Your electrical issue. Fixed today. By Shai personally.",
+  tagline: "Your electrical issue. Fixed today. Shai answers personally.",
   established: 2003,
 
   phone: "(818) 657-9605",
