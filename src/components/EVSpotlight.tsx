@@ -1,0 +1,126 @@
+import Image from "next/image";
+import { Check } from "lucide-react";
+import ScrollFade from "./ScrollFade";
+import LeadForm from "./LeadForm";
+
+const POINTS = [
+  "Load calculation + permit pulled before we touch a wire",
+  "NEMA 14-50 or hardwired — your choice, both code-compliant",
+  "Cable run hidden through the wall when possible (no surface ugly)",
+  "City inspection scheduled and passed before final invoice",
+];
+
+export default function EVSpotlight() {
+  return (
+    <section id="ev" className="relative bg-ink text-white overflow-hidden">
+      {/* Soft red glow corner */}
+      <span
+        aria-hidden
+        className="absolute -top-40 -right-40 w-[640px] h-[640px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(192,10,11,0.35), rgba(192,10,11,0) 70%)",
+        }}
+      />
+
+      <div className="relative max-w-content mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* Copy column */}
+        <div className="lg:col-span-7">
+          <ScrollFade>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-brand">
+              EV charger install
+            </p>
+            <h2 className="mt-4 font-display font-bold text-h2-m md:text-h2-d text-white text-balance">
+              Going electric? Get charging at home in{" "}
+              <span className="text-brand">2 hours</span>.
+            </h2>
+            <p className="mt-5 text-[17px] md:text-[18px] text-white/75 leading-[1.6] max-w-[58ch]">
+              Most installs are a half-day, permit included, inspector-approved.
+              We&apos;ve done it 400+ times in the Valley — Tesla, Rivian, Ford, Hyundai,
+              Kia, doesn&apos;t matter.
+            </p>
+          </ScrollFade>
+
+          <ScrollFade delay={120}>
+            <ul className="mt-7 space-y-3">
+              {POINTS.map((p) => (
+                <li key={p} className="flex gap-3 items-start">
+                  <span className="mt-0.5 w-5 h-5 rounded-full bg-brand inline-flex items-center justify-center shrink-0">
+                    <Check size={12} strokeWidth={3} className="text-white" />
+                  </span>
+                  <span className="text-[15px] md:text-[16px] text-white/85">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </ScrollFade>
+
+          <ScrollFade delay={200}>
+            <figure className="mt-8 border-l-2 border-brand pl-5">
+              <blockquote className="text-[16px] md:text-[17px] italic text-white/85 leading-[1.55]">
+                &ldquo;EV charger was installed in less than 2 hours. Excellent
+                communication. Very good pricing.&rdquo;
+              </blockquote>
+              <figcaption className="mt-2 text-[13px] text-white/60">
+                — Stephanie S., Yelp · Dec 2025
+              </figcaption>
+            </figure>
+          </ScrollFade>
+
+          <ScrollFade delay={260}>
+            {/* Pricing strip */}
+            <div className="mt-8 inline-flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-2 bg-white/[0.06] border border-white/12 rounded-xl px-5 py-4">
+              <div>
+                <p className="font-display font-bold text-[20px] text-white leading-none">
+                  $650 – $1,400
+                </p>
+                <p className="text-[12px] text-white/60 mt-1 leading-none">
+                  Typical install
+                </p>
+              </div>
+              <span className="hidden sm:block w-px h-9 bg-white/15" aria-hidden />
+              <p className="text-[14px] text-white/85">
+                Free quote · No-obligation
+              </p>
+            </div>
+          </ScrollFade>
+
+          {/* Photo on mobile only — appears below copy */}
+          <ScrollFade delay={320} className="lg:hidden">
+            <div className="mt-10 relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
+              <Image
+                src="/images/ev-stone.jpg"
+                alt="Stone-clad meter and EV-ready electrical work by All Quality Electrical"
+                fill
+                quality={90}
+                sizes="(max-width: 1024px) 90vw, 0px"
+                className="object-cover"
+              />
+            </div>
+          </ScrollFade>
+        </div>
+
+        {/* Right column: photo (lg+) + form */}
+        <div className="lg:col-span-5">
+          <ScrollFade delay={120} className="hidden lg:block">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 mb-5">
+              <Image
+                src="/images/ev-stone.jpg"
+                alt="Stone-clad meter and EV-ready electrical work by All Quality Electrical"
+                fill
+                quality={90}
+                sizes="(max-width: 1024px) 0px, 480px"
+                className="object-cover"
+              />
+            </div>
+          </ScrollFade>
+
+          <ScrollFade delay={200} as="div">
+            <div id="contact">
+              <LeadForm />
+            </div>
+          </ScrollFade>
+        </div>
+      </div>
+    </section>
+  );
+}
