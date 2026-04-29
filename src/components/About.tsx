@@ -17,10 +17,10 @@ export default function About() {
           <ScrollFade className="lg:col-span-5">
             <div className="relative aspect-[3/4] w-full max-w-[480px] mx-auto overflow-hidden rounded-2xl ring-1 ring-ink/5 shadow-lift">
               <Image
-                src="/images/shai-worker.jpg"
-                alt="Shai, owner of All Quality Electrical, on the job in the San Fernando Valley"
+                src="/images/ev-stone.jpg"
+                alt="Shai, owner of All Quality Electrical, with one of his crew"
                 fill
-                quality={90}
+                quality={88}
                 sizes="(max-width: 1024px) 90vw, 480px"
                 className="object-cover"
               />

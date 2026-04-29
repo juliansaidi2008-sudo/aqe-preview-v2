@@ -18,8 +18,8 @@ const ITEMS = [
   },
   {
     src: "/images/gallery-1.jpg",
-    alt: "Recent service-panel and meter work",
-    caption: "Service panel & meter work",
+    alt: "Dining room with chandelier and full recessed-lighting install",
+    caption: "Dining room · recessed lighting",
     aspect: "aspect-[4/3]",
     span: "md:col-span-3",
   },
@@ -32,8 +32,8 @@ const ITEMS = [
   },
   {
     src: "/images/shai-worker.jpg",
-    alt: "Shai, owner of All Quality Electrical, on the job",
-    caption: "Shai on a service call",
+    alt: "AQE technician installing a ceiling fixture during an interior remodel",
+    caption: "Interior · ceiling fixture install",
     aspect: "aspect-[4/5]",
     span: "md:col-span-5",
   },
