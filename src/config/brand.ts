@@ -47,7 +47,7 @@ export const brand = {
     note: "License available on request",
   },
 
-  siteUrl: "https://aqe-preview.vercel.app",
+  siteUrl: "https://aqe-preview-v2.vercel.app",
 
   // Map iframe src — real Google Maps, no hand-drawn SVG nonsense.
   mapsEmbed:
