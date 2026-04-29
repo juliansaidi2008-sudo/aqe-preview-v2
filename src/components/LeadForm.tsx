@@ -2,13 +2,15 @@
 
 import { FormEvent, useState } from "react";
 
-const VEHICLES = [
-  { value: "", label: "Vehicle make" },
-  { value: "Tesla", label: "Tesla" },
-  { value: "Rivian", label: "Rivian" },
-  { value: "Ford", label: "Ford" },
-  { value: "Hyundai-Kia", label: "Hyundai / Kia" },
-  { value: "Other", label: "Other" },
+const SERVICES = [
+  { value: "", label: "What do you need?" },
+  { value: "EV charger install", label: "EV charger install" },
+  { value: "Panel upgrade", label: "Panel upgrade" },
+  { value: "Whole-home rewiring", label: "Whole-home rewiring" },
+  { value: "Recessed lighting", label: "Recessed lighting" },
+  { value: "Diagnostics & repair", label: "Diagnostics & repair" },
+  { value: "Remodel / addition", label: "Remodel / addition" },
+  { value: "Other / not sure", label: "Other / not sure" },
 ];
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -24,13 +26,13 @@ export default function LeadForm() {
     const fd = new FormData(e.currentTarget);
     const name = (fd.get("name") || "").toString().trim();
     const phone = (fd.get("phone") || "").toString().trim();
-    const vehicle = (fd.get("vehicle") || "").toString();
+    const service = (fd.get("service") || "").toString();
     const zip = (fd.get("zip") || "").toString().trim();
 
     if (!name) return setError("Please enter your name.");
     if (phone.replace(/\D/g, "").length < 10)
       return setError("Phone needs at least 10 digits.");
-    if (!vehicle) return setError("Pick a vehicle make.");
+    if (!service) return setError("Pick what you need help with.");
     if (zip.replace(/\D/g, "").length < 5)
       return setError("ZIP needs at least 5 digits.");
 
@@ -79,7 +81,7 @@ export default function LeadForm() {
         Free, no-obligation quote
       </p>
       <p className="mt-2 text-[18px] font-display font-bold text-white">
-        Get a quote for your EV install
+        Tell us what you need
       </p>
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -99,10 +101,10 @@ export default function LeadForm() {
           required
           className="field field-on-dark"
         />
-        <select name="vehicle" required className="field field-on-dark">
-          {VEHICLES.map((v) => (
-            <option key={v.value} value={v.value} className="text-ink">
-              {v.label}
+        <select name="service" required className="field field-on-dark sm:col-span-2">
+          {SERVICES.map((s) => (
+            <option key={s.value} value={s.value} className="text-ink">
+              {s.label}
             </option>
           ))}
         </select>
