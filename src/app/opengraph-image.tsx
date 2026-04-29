@@ -7,20 +7,15 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 /**
- * Custom branded OG card. Renders the AQ wordmark, a punchy tagline, and
- * the trust bar (Yelp rating + Canoga Park address) on the brand navy with a
- * red accent — so any time the link is shared (iMessage, Twitter, LinkedIn,
- * Slack, WhatsApp) the preview looks like a real business asset.
+ * Custom branded OG card. Renders the AQ wordmark + tagline + trust strip
+ * on the brand navy with a red glow accent — so any time the link is shared
+ * (iMessage, Twitter, Slack, WhatsApp) the preview looks like a real
+ * business asset rather than a cropped photo.
+ *
+ * The logo mark is recreated in JSX rather than fetching the PNG, so we
+ * don't depend on an external image being reachable from the Edge runtime.
  */
 export default async function OG() {
-  // Edge runtime can't use process.env at module load for the host, so build
-  // the absolute URL from the deployed origin via VERCEL_URL when available.
-  const host =
-    process.env.VERCEL_URL && !process.env.VERCEL_URL.startsWith("http")
-      ? `https://${process.env.VERCEL_URL}`
-      : brand.siteUrl;
-  const logoUrl = `${host}/aq_logo.png`;
-
   return new ImageResponse(
     (
       <div
@@ -29,28 +24,62 @@ export default async function OG() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "72px 80px",
+          padding: "64px 80px",
           background:
-            "radial-gradient(circle at 88% 18%, rgba(192,10,11,0.55), rgba(14,18,32,0) 55%), linear-gradient(160deg, #0E1220 0%, #131724 100%)",
+            "radial-gradient(circle at 88% 16%, rgba(192,10,11,0.62), rgba(14,18,32,0) 55%), linear-gradient(160deg, #0D1120 0%, #131724 100%)",
           color: "#FAFAF7",
-          fontFamily: '"Inter", system-ui, sans-serif',
+          fontFamily: '"Inter", "Helvetica Neue", system-ui, sans-serif',
         }}
       >
-        {/* Top: logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={logoUrl}
-            alt={brand.name}
-            width={310}
-            height={62}
-            style={{ borderRadius: 8 }}
-          />
+        {/* TOP — AQ logo lockup recreated in JSX */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 22,
+          }}
+        >
+          {/* Red square AQ mark */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 96,
+              height: 96,
+              background: "#C00A0B",
+              borderRadius: 14,
+              fontSize: 60,
+              fontWeight: 800,
+              color: "#FAFAF7",
+              letterSpacing: -3,
+              fontFamily: '"Helvetica Neue", system-ui, sans-serif',
+            }}
+          >
+            AQ
+          </div>
+          {/* Wordmark stack */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontWeight: 800,
+              fontSize: 36,
+              letterSpacing: -1,
+              lineHeight: 1.05,
+              color: "#FAFAF7",
+            }}
+          >
+            <span>ALL QUALITY</span>
+            <span>ELECTRICAL</span>
+          </div>
         </div>
 
-        {/* Middle: headline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+        {/* Spacer */}
+        <div style={{ display: "flex", flex: 1 }} />
+
+        {/* MIDDLE — eyebrow + headline */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <p
             style={{
               fontSize: 22,
@@ -59,54 +88,72 @@ export default async function OG() {
               textTransform: "uppercase",
               color: "#C00A0B",
               margin: 0,
+              marginBottom: 22,
             }}
           >
-            Licensed electricians · Canoga Park, CA
+            Licensed CA C-10 · Canoga Park, CA
           </p>
-          <h1
+          <div
             style={{
-              fontSize: 88,
-              lineHeight: 1.02,
+              display: "flex",
+              fontSize: 84,
               fontWeight: 800,
-              letterSpacing: "-0.025em",
               color: "#FAFAF7",
-              margin: 0,
-              maxWidth: 1000,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.02,
             }}
           >
             Your electrical issue.
-            <br />
-            Fixed today.{" "}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 84,
+              fontWeight: 800,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.02,
+              marginTop: 6,
+              flexWrap: "wrap",
+              gap: 18,
+            }}
+          >
+            <span style={{ color: "#FAFAF7" }}>Fixed today.</span>
             <span style={{ color: "#FF5A5C" }}>By Shai’s team personally.</span>
-          </h1>
+          </div>
         </div>
 
-        {/* Bottom: trust bar */}
+        {/* Spacer */}
+        <div style={{ display: "flex", flex: 0.5 }} />
+
+        {/* BOTTOM — trust strip */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 32,
-            fontSize: 24,
-            color: "rgba(250, 250, 247, 0.86)",
+            gap: 24,
+            fontSize: 22,
+            color: "rgba(250,250,247,0.86)",
             fontWeight: 500,
           }}
         >
           <span style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span
               style={{
-                width: 14,
-                height: 14,
+                display: "flex",
+                width: 12,
+                height: 12,
                 borderRadius: 999,
                 background: "#C00A0B",
               }}
             />
             CA C-10 licensed &amp; insured
           </span>
-          <span style={{ opacity: 0.4 }}>·</span>
-          <span>{brand.rating}★ on Yelp · {brand.reviewCount}+ reviews</span>
-          <span style={{ opacity: 0.4 }}>·</span>
-          <span>20+ years, family-run</span>
+          <span style={{ display: "flex", opacity: 0.4 }}>·</span>
+          <span style={{ display: "flex" }}>
+            {brand.rating} stars on Yelp · {brand.reviewCount}+ reviews
+          </span>
+          <span style={{ display: "flex", opacity: 0.4 }}>·</span>
+          <span style={{ display: "flex" }}>20+ years, family-run</span>
         </div>
       </div>
     ),
