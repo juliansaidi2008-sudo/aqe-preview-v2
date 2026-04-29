@@ -1,41 +1,38 @@
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import ScrollFade from "./ScrollFade";
+import { brand } from "@/config/brand";
 
 const ITEMS = [
   {
     src: "/images/hero-malibu.jpg",
     alt: "Utility-pole service install in Malibu",
     caption: "Malibu · Utility service install",
-    aspect: "aspect-[4/5]",
-    span: "md:col-span-4 md:row-span-2",
+    objectPosition: "center 30%",
   },
   {
     src: "/images/ev-stone.jpg",
     alt: "Shai and the AQE crew on a recent install",
     caption: "On the job · AQE crew",
-    aspect: "aspect-[4/3]",
-    span: "md:col-span-5",
+    objectPosition: "center",
   },
   {
     src: "/images/gallery-1.jpg",
     alt: "Dining room with chandelier and full recessed-lighting install",
     caption: "Dining room · recessed lighting",
-    aspect: "aspect-[4/3]",
-    span: "md:col-span-3",
+    objectPosition: "center",
   },
   {
     src: "/images/gallery-2.jpg",
-    alt: "Our Lady of Grace school library — commercial lighting",
+    alt: "Our Lady of Grace school library — recessed lighting + smoke detectors",
     caption: "Our Lady of Grace school · library",
-    aspect: "aspect-[4/5]",
-    span: "md:col-span-3",
+    objectPosition: "center top",
   },
   {
     src: "/images/shai-worker.jpg",
     alt: "AQE technician installing a ceiling fixture during an interior remodel",
     caption: "Interior · ceiling fixture install",
-    aspect: "aspect-[4/5]",
-    span: "md:col-span-5",
+    objectPosition: "center 30%",
   },
 ];
 
@@ -49,30 +46,63 @@ export default function Gallery() {
             From panels to charging stations.
           </h2>
           <p className="mt-5 text-[16px] md:text-[17px] text-charcoal max-w-[56ch]">
-            A few of the jobs we&apos;ve done across the Valley recently.
+            A few real jobs from across the Valley.
           </p>
         </ScrollFade>
 
-        <div className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4">
+        <div className="mt-12 md:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           {ITEMS.map((p, i) => (
-            <ScrollFade key={p.src + i} delay={i * 60} className={p.span}>
-              <figure
-                className={`relative w-full ${p.aspect} overflow-hidden rounded-2xl ring-1 ring-ink/5 group`}
-              >
+            <ScrollFade key={p.src + i} delay={i * 60}>
+              <figure className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-ink/5 group bg-surface">
                 <Image
                   src={p.src}
                   alt={p.alt}
                   fill
                   quality={85}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectPosition: p.objectPosition }}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5 text-white text-[13px] md:text-[14px] font-medium bg-gradient-to-t from-black/60 to-transparent">
+                <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5 text-white text-[13px] md:text-[14px] font-medium bg-gradient-to-t from-black/65 via-black/20 to-transparent">
                   {p.caption}
                 </figcaption>
               </figure>
             </ScrollFade>
           ))}
+
+          {/* Editorial 6th tile — stats CTA, fills the bento and earns its space */}
+          <ScrollFade delay={ITEMS.length * 60}>
+            <a
+              href="#contact"
+              className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 group bg-ink text-white flex flex-col justify-between p-6 md:p-7 lift"
+            >
+              {/* Soft red glow */}
+              <span
+                aria-hidden
+                className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(closest-side, rgba(192,10,11,0.55), rgba(192,10,11,0) 70%)",
+                }}
+              />
+              <div className="relative">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand">
+                  By the numbers
+                </p>
+                <p className="mt-3 font-display font-extrabold text-[44px] md:text-[52px] leading-none tracking-[-0.02em]">
+                  2,400+
+                </p>
+                <p className="mt-2 text-[14px] text-white/70 max-w-[24ch]">
+                  Valley homes wired since {brand.established}.
+                </p>
+              </div>
+
+              <div className="relative inline-flex items-center gap-1.5 text-[14px] font-semibold text-white group-hover:gap-2.5 transition-all">
+                Be next on the list
+                <ArrowRight size={16} strokeWidth={2} />
+              </div>
+            </a>
+          </ScrollFade>
         </div>
       </div>
     </section>
