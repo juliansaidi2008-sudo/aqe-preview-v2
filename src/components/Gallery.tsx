@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ScrollFade from "./ScrollFade";
-import StatsCounter from "./StatsCounter";
 import { brand } from "@/config/brand";
 import { blur } from "@/lib/imageBlurs";
 
@@ -98,8 +97,8 @@ export default function Gallery() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand">
                   By the numbers
                 </p>
-                <p className="mt-3 font-display font-extrabold text-[44px] md:text-[52px] leading-none tracking-[-0.02em]">
-                  <StatsCounter to={2400} suffix="+" duration={1000} />
+                <p className="mt-3 font-display font-extrabold text-[44px] md:text-[52px] leading-none tracking-[-0.02em] tabular-nums">
+                  2,400+
                 </p>
                 <p className="mt-2 text-[14px] text-white/70 max-w-[24ch]">
                   Valley homes wired since {brand.established}.
