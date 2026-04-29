@@ -2,6 +2,10 @@
 
 import { FormEvent, useState } from "react";
 
+// Where leads land while no Formspree endpoint is configured.
+// When the project is sold, swap the env var on Vercel and this fallback never fires.
+const FALLBACK_LEAD_EMAIL = "julian.saidi2008@gmail.com";
+
 const SERVICES = [
   { value: "", label: "What do you need?" },
   { value: "EV charger install", label: "EV charger install" },
@@ -18,6 +22,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [viaMailto, setViaMailto] = useState(false);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,21 +43,49 @@ export default function LeadForm() {
 
     setStatus("submitting");
 
-    const endpoint =
-      process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ||
-      "https://formspree.io/f/REPLACE_ME";
+    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    const hasRealEndpoint = !!endpoint && !endpoint.includes("REPLACE_ME");
 
     fd.append("lead_source", "AQE Preview Site");
 
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: fd,
-      });
-      if (!res.ok && !endpoint.includes("REPLACE_ME")) {
-        throw new Error(`Submission failed (${res.status})`);
+    // Path 1 — Formspree endpoint configured: POST and we're done.
+    if (hasRealEndpoint) {
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: fd,
+        });
+        if (!res.ok) throw new Error(`Submission failed (${res.status})`);
+        setStatus("success");
+      } catch (err) {
+        setStatus("error");
+        setError(err instanceof Error ? err.message : "Something went wrong.");
       }
+      return;
+    }
+
+    // Path 2 — fallback to mailto so the lead actually reaches a human while
+    // Formspree is being set up. Opens the visitor's mail app pre-filled.
+    try {
+      const subject = encodeURIComponent(
+        `New AQE lead — ${service} — ${name}`
+      );
+      const body = encodeURIComponent(
+        [
+          `Service: ${service}`,
+          `Name: ${name}`,
+          `Phone: ${phone}`,
+          `ZIP: ${zip}`,
+          ``,
+          `Source: AQE Preview Site`,
+          `Submitted: ${new Date().toLocaleString()}`,
+        ].join("\n")
+      );
+      window.location.href = `mailto:${FALLBACK_LEAD_EMAIL}?subject=${subject}&body=${body}`;
+      // Give the email client a beat to open before we flip the UI.
+      await new Promise((r) => setTimeout(r, 400));
+      setViaMailto(true);
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -65,7 +98,9 @@ export default function LeadForm() {
       <div className="bg-white/[0.04] border border-white/12 rounded-2xl p-7 md:p-8 text-white">
         <p className="font-display font-bold text-[22px]">Got it.</p>
         <p className="mt-2 text-[15px] text-white/75 leading-[1.6]">
-          Shai will call you within 1 business hour.
+          {viaMailto
+            ? "Just hit send in the email draft we opened — we'll call within 1 business hour."
+            : "Shai will call you within 1 business hour."}
         </p>
       </div>
     );
