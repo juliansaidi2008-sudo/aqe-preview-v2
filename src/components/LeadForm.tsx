@@ -1,10 +1,18 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 // Where leads land while no Formspree endpoint is configured.
 // When the project is sold, swap the env var on Vercel and this fallback never fires.
 const FALLBACK_LEAD_EMAIL = "julian.saidi2008@gmail.com";
+
+/** Format a US phone number as (XXX) XXX-XXXX while the user types. */
+function formatPhone(raw: string): string {
+  const digits = raw.replace(/\D/g, "").slice(0, 10);
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
 
 const SERVICES = [
   { value: "", label: "What do you need?" },
@@ -23,6 +31,11 @@ export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
   const [viaMailto, setViaMailto] = useState(false);
+  const [phone, setPhone] = useState("");
+
+  const onPhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPhone(formatPhone(e.target.value));
+  };
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -133,7 +146,10 @@ export default function LeadForm() {
           type="tel"
           autoComplete="tel"
           placeholder="Phone"
+          value={phone}
+          onChange={onPhoneChange}
           required
+          maxLength={14}
           className="field field-on-dark"
         />
         <select

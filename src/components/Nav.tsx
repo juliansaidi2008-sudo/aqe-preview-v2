@@ -14,11 +14,15 @@ const ITEMS = [
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      // Smooth opacity ramp from 0 → 1 across the first 80px of scroll
+      const p = Math.min(1, Math.max(0, window.scrollY / 80));
+      setScrollProgress(p);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -34,11 +38,14 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-40 transition-all duration-200 ${
-          scrolled
-            ? "bg-bg/85 backdrop-blur border-b border-hairline"
-            : "bg-bg/0 border-b border-transparent"
-        }`}
+        className="fixed inset-x-0 top-0 z-40"
+        style={{
+          backgroundColor: `rgba(250, 250, 247, ${scrollProgress * 0.88})`,
+          backdropFilter: scrollProgress > 0.05 ? `blur(${scrollProgress * 12}px)` : undefined,
+          WebkitBackdropFilter: scrollProgress > 0.05 ? `blur(${scrollProgress * 12}px)` : undefined,
+          borderBottom: `1px solid rgba(228, 225, 217, ${scrollProgress})`,
+          transition: "background-color 0.18s ease, border-color 0.18s ease",
+        }}
       >
         <div className="max-w-content mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between">
           <a href="#top" aria-label={`${brand.name} — home`} className="inline-flex items-center">

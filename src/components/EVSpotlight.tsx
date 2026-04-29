@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import ScrollFade from "./ScrollFade";
 import LeadForm from "./LeadForm";
+import { blur } from "@/lib/imageBlurs";
+
+const evStoneBlur = blur.evStone;
 
 const POINTS = [
   "Load calculation + permit pulled before we touch a wire",
@@ -94,6 +97,8 @@ export default function EVSpotlight() {
                 quality={90}
                 sizes="(max-width: 1024px) 90vw, 0px"
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL={evStoneBlur}
               />
             </div>
           </ScrollFade>

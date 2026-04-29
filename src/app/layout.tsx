@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { brand } from "@/config/brand";
+import { FAQS } from "@/lib/faqs";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -44,20 +45,12 @@ export const metadata: Metadata = {
     siteName: brand.name,
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: `${brand.name} — Licensed electricians in ${brand.address.city}`,
-      },
-    ],
+    // Image is generated dynamically by app/opengraph-image.tsx at /opengraph-image
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.jpg"],
   },
   robots: { index: true, follow: true },
   icons: {
@@ -108,6 +101,19 @@ const jsonLd = {
   foundingDate: String(brand.established),
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
+  })),
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -117,6 +123,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body className="bg-bg text-ink">

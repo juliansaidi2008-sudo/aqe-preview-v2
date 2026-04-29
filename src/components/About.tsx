@@ -1,11 +1,13 @@
 import Image from "next/image";
 import ScrollFade from "./ScrollFade";
+import StatsCounter from "./StatsCounter";
 import { brand } from "@/config/brand";
+import { blur } from "@/lib/imageBlurs";
 
 const STATS = [
-  { k: "20+", v: "Years in the Valley" },
-  { k: "2,400+", v: "Homes wired" },
-  { k: `${brand.rating}★`, v: `From ${brand.reviewCount}+ reviews` },
+  { count: 20, suffix: "+", v: "Years in the Valley" },
+  { count: 2400, suffix: "+", v: "Homes wired" },
+  { count: brand.rating, suffix: "★", v: `From ${brand.reviewCount}+ reviews`, decimals: 1 },
 ];
 
 export default function About() {
@@ -23,6 +25,8 @@ export default function About() {
                 quality={88}
                 sizes="(max-width: 1024px) 90vw, 480px"
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL={blur.evStone}
               />
             </div>
           </ScrollFade>
@@ -60,10 +64,16 @@ export default function About() {
             {/* Stat row */}
             <ScrollFade delay={220}>
               <dl className="mt-8 grid grid-cols-3 gap-4 md:gap-6 border-t border-hairline pt-7">
-                {STATS.map((s) => (
+                {STATS.map((s, i) => (
                   <div key={s.v}>
                     <dt className="font-display font-bold text-[34px] md:text-[40px] text-ink leading-none tracking-[-0.02em]">
-                      {s.k}
+                      <StatsCounter
+                        to={s.count}
+                        suffix={s.suffix}
+                        decimals={s.decimals ?? 0}
+                        duration={1400}
+                        delay={i * 120}
+                      />
                     </dt>
                     <dd className="mt-2 text-[12px] md:text-[13px] uppercase tracking-[0.1em] text-charcoal font-semibold">
                       {s.v}

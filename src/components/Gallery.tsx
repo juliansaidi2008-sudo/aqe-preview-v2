@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ScrollFade from "./ScrollFade";
+import StatsCounter from "./StatsCounter";
 import { brand } from "@/config/brand";
+import { blur } from "@/lib/imageBlurs";
 
 const ITEMS = [
   {
@@ -9,30 +11,35 @@ const ITEMS = [
     alt: "Utility-pole service install in Malibu",
     caption: "Malibu · Utility service install",
     objectPosition: "center 30%",
+    blurDataURL: blur.heroMalibu,
   },
   {
     src: "/images/ev-stone.jpg",
     alt: "Shai and the AQE crew on a recent install",
     caption: "On the job · AQE crew",
     objectPosition: "center",
+    blurDataURL: blur.evStone,
   },
   {
     src: "/images/gallery-1.jpg",
     alt: "Dining room with chandelier and full recessed-lighting install",
     caption: "Dining room · recessed lighting",
     objectPosition: "center",
+    blurDataURL: blur.gallery1,
   },
   {
     src: "/images/gallery-2.jpg",
     alt: "Our Lady of Grace school library — recessed lighting + smoke detectors",
     caption: "Our Lady of Grace school · library",
     objectPosition: "center top",
+    blurDataURL: blur.gallery2,
   },
   {
     src: "/images/shai-worker.jpg",
     alt: "AQE technician installing a ceiling fixture during an interior remodel",
     caption: "Interior · ceiling fixture install",
     objectPosition: "center 30%",
+    blurDataURL: blur.shaiWorker,
   },
 ];
 
@@ -62,6 +69,8 @@ export default function Gallery() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   style={{ objectPosition: p.objectPosition }}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  placeholder="blur"
+                  blurDataURL={p.blurDataURL}
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5 text-white text-[13px] md:text-[14px] font-medium bg-gradient-to-t from-black/65 via-black/20 to-transparent">
                   {p.caption}
@@ -90,7 +99,7 @@ export default function Gallery() {
                   By the numbers
                 </p>
                 <p className="mt-3 font-display font-extrabold text-[44px] md:text-[52px] leading-none tracking-[-0.02em]">
-                  2,400+
+                  <StatsCounter to={2400} suffix="+" duration={1400} />
                 </p>
                 <p className="mt-2 text-[14px] text-white/70 max-w-[24ch]">
                   Valley homes wired since {brand.established}.
