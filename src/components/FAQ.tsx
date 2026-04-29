@@ -43,7 +43,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 <div
-                  className={`grid transition-all duration-300 ${
+                  className={`grid transition-all duration-200 ${
                     isOpen ? "grid-rows-[1fr] pb-6" : "grid-rows-[0fr]"
                   }`}
                 >

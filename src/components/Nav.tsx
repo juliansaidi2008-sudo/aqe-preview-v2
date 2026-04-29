@@ -44,7 +44,7 @@ export default function Nav() {
           backdropFilter: scrollProgress > 0.05 ? `blur(${scrollProgress * 12}px)` : undefined,
           WebkitBackdropFilter: scrollProgress > 0.05 ? `blur(${scrollProgress * 12}px)` : undefined,
           borderBottom: `1px solid rgba(228, 225, 217, ${scrollProgress})`,
-          transition: "background-color 0.18s ease, border-color 0.18s ease",
+          transition: "background-color 0.14s ease, border-color 0.14s ease",
         }}
       >
         <div className="max-w-content mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between">

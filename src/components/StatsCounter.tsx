@@ -6,7 +6,7 @@ type Props = {
   to: number;
   suffix?: string;
   prefix?: string;
-  /** Animation duration in ms. Default 1400. */
+  /** Animation duration in ms. Default 900. */
   duration?: number;
   /** Delay before starting (after intersection). Default 0. */
   delay?: number;
@@ -24,7 +24,7 @@ export default function StatsCounter({
   to,
   suffix = "",
   prefix = "",
-  duration = 1400,
+  duration = 900,
   delay = 0,
   decimals = 0,
 }: Props) {

@@ -68,7 +68,7 @@ export default function Gallery() {
                   quality={85}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   style={{ objectPosition: p.objectPosition }}
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   placeholder="blur"
                   blurDataURL={p.blurDataURL}
                 />
@@ -99,7 +99,7 @@ export default function Gallery() {
                   By the numbers
                 </p>
                 <p className="mt-3 font-display font-extrabold text-[44px] md:text-[52px] leading-none tracking-[-0.02em]">
-                  <StatsCounter to={2400} suffix="+" duration={1400} />
+                  <StatsCounter to={2400} suffix="+" duration={1000} />
                 </p>
                 <p className="mt-2 text-[14px] text-white/70 max-w-[24ch]">
                   Valley homes wired since {brand.established}.

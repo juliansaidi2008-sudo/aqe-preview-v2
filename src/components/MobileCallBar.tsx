@@ -31,7 +31,7 @@ export default function MobileCallBar() {
         paddingBottom: "max(0px, env(safe-area-inset-bottom))",
         transform: visible ? "translateY(0)" : "translateY(120%)",
         opacity: visible ? 1 : 0,
-        transition: "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease",
+        transition: "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease",
         pointerEvents: visible ? "auto" : "none",
       }}
       aria-hidden={!visible}

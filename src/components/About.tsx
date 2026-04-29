@@ -71,8 +71,8 @@ export default function About() {
                         to={s.count}
                         suffix={s.suffix}
                         decimals={s.decimals ?? 0}
-                        duration={1400}
-                        delay={i * 120}
+                        duration={900}
+                        delay={i * 80}
                       />
                     </dt>
                     <dd className="mt-2 text-[12px] md:text-[13px] uppercase tracking-[0.1em] text-charcoal font-semibold">
