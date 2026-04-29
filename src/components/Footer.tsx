@@ -38,12 +38,12 @@ export default function Footer() {
             <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-ink">
               Services
             </p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3">
               {SERVICES.map((s) => (
                 <li key={s.label}>
                   <a
                     href={s.href}
-                    className="text-[14px] text-charcoal hover:text-ink transition-colors"
+                    className="block py-3 -my-px text-[14px] text-charcoal hover:text-ink transition-colors"
                   >
                     {s.label}
                   </a>
@@ -57,12 +57,12 @@ export default function Footer() {
             <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-ink">
               Company
             </p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3">
               {COMPANY.map((c) => (
                 <li key={c.label}>
                   <a
                     href={c.href}
-                    className="text-[14px] text-charcoal hover:text-ink transition-colors"
+                    className="block py-3 -my-px text-[14px] text-charcoal hover:text-ink transition-colors"
                   >
                     {c.label}
                   </a>
@@ -76,11 +76,11 @@ export default function Footer() {
             <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-ink">
               Contact
             </p>
-            <ul className="mt-4 space-y-3 text-[14px] text-charcoal">
+            <ul className="mt-3 text-[14px] text-charcoal">
               <li>
                 <a
                   href={brand.phoneHref}
-                  className="inline-flex items-center gap-2 hover:text-ink transition-colors"
+                  className="flex items-center gap-2 py-3 hover:text-ink transition-colors"
                 >
                   <Phone size={14} strokeWidth={2} className="text-brand" />
                   {brand.phone}
@@ -89,21 +89,21 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${brand.email}`}
-                  className="inline-flex items-center gap-2 hover:text-ink transition-colors"
+                  className="flex items-center gap-2 py-3 hover:text-ink transition-colors"
                 >
                   <Mail size={14} strokeWidth={2} className="text-brand" />
                   <span className="break-all">{brand.email}</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={14} strokeWidth={2} className="text-brand mt-0.5 shrink-0" />
+              <li className="flex items-start gap-2 py-3">
+                <MapPin size={14} strokeWidth={2} className="text-brand mt-1 shrink-0" />
                 <span>
                   {brand.address.street}
                   <br />
                   {brand.address.city}, {brand.address.state} {brand.address.zip}
                 </span>
               </li>
-              <li className="text-charcoal/80">{brand.hours.label}</li>
+              <li className="py-3 text-charcoal/80">{brand.hours.label}</li>
             </ul>
           </div>
         </div>

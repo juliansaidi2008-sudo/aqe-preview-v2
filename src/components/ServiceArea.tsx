@@ -51,7 +51,7 @@ export default function ServiceArea() {
                 href={brand.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute right-3 bottom-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink bg-white border border-hairline rounded-lg px-3 py-2 shadow-soft hover:bg-bg transition-colors"
+                className="absolute right-3 bottom-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink bg-white border border-hairline rounded-lg px-4 py-3 shadow-soft hover:bg-bg transition-colors"
               >
                 Open in Maps
                 <ExternalLink size={13} strokeWidth={2} />

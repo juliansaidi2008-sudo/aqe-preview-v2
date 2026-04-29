@@ -149,7 +149,7 @@ export default function Reviews() {
             href="https://www.yelp.com/biz/all-quality-electrical-canoga-park"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:text-brand transition-colors"
+            className="inline-flex items-center gap-1.5 py-3 -my-3 text-[14px] font-semibold text-ink hover:text-brand transition-colors"
           >
             Read all reviews on Yelp
             <ExternalLink size={14} strokeWidth={2} />
@@ -161,7 +161,7 @@ export default function Reviews() {
               onClick={() => setPage((p) => Math.max(0, p - 1))}
               disabled={page === 0}
               aria-label="Previous reviews"
-              className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-hairline bg-white hover:border-ink/40 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="w-11 h-11 inline-flex items-center justify-center rounded-full border border-hairline bg-white hover:border-ink/40 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronLeft size={18} strokeWidth={2} />
             </button>
@@ -173,7 +173,7 @@ export default function Reviews() {
               onClick={() => setPage((p) => Math.min(PAGES - 1, p + 1))}
               disabled={page === PAGES - 1}
               aria-label="Next reviews"
-              className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-hairline bg-white hover:border-ink/40 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="w-11 h-11 inline-flex items-center justify-center rounded-full border border-hairline bg-white hover:border-ink/40 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronRight size={18} strokeWidth={2} />
             </button>
