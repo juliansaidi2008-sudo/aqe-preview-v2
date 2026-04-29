@@ -66,15 +66,17 @@ export default function Hero() {
           {/* Photo + floating badges */}
           <div className="lg:col-span-5">
             <div className="relative">
-              <div className="relative aspect-[563/1000] w-full max-w-[460px] mx-auto overflow-hidden rounded-2xl ring-1 ring-ink/5 shadow-lift">
+              <div className="relative aspect-[4/5] w-full max-w-[440px] mx-auto overflow-hidden rounded-2xl ring-1 ring-ink/5 shadow-lift">
                 <Image
                   src="/images/hero-malibu.jpg"
-                  alt="All Quality Electrical install — Malibu utility upgrade"
+                  alt={`${brand.name} — utility-pole service install in Malibu`}
                   fill
                   priority
-                  quality={90}
-                  sizes="(max-width: 1024px) 90vw, 460px"
+                  quality={82}
+                  sizes="(max-width: 1024px) 90vw, 440px"
                   className="object-cover"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAFAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAj/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKpAH//Z"
                 />
               </div>
 

@@ -4,36 +4,36 @@ import ScrollFade from "./ScrollFade";
 const ITEMS = [
   {
     src: "/images/hero-malibu.jpg",
-    alt: "Malibu utility install",
-    caption: "Malibu · Service utility install",
+    alt: "Utility-pole service install in Malibu",
+    caption: "Malibu · Utility service install",
     aspect: "aspect-[4/5]",
     span: "md:col-span-4 md:row-span-2",
   },
   {
     src: "/images/ev-stone.jpg",
-    alt: "Stone-clad meter and EV-ready electrical work",
-    caption: "Calabasas · Stone-clad meter + EV prep",
+    alt: "Shai and the AQE crew on a recent install",
+    caption: "On the job · AQE crew",
     aspect: "aspect-[4/3]",
     span: "md:col-span-5",
   },
   {
     src: "/images/gallery-1.jpg",
-    alt: "Service panel work",
-    caption: "Woodland Hills · 200A panel upgrade",
+    alt: "Recent service-panel and meter work",
+    caption: "Service panel & meter work",
     aspect: "aspect-[4/3]",
     span: "md:col-span-3",
   },
   {
     src: "/images/gallery-2.jpg",
-    alt: "Our Lady of Grace school library — commercial",
-    caption: "Encino · Our Lady of Grace school library",
+    alt: "Our Lady of Grace school library — commercial lighting",
+    caption: "Our Lady of Grace school · library",
     aspect: "aspect-[4/5]",
     span: "md:col-span-3",
   },
   {
     src: "/images/shai-worker.jpg",
-    alt: "Shai on the job",
-    caption: "Sherman Oaks · ADU electrical rough-in",
+    alt: "Shai, owner of All Quality Electrical, on the job",
+    caption: "Shai on a service call",
     aspect: "aspect-[4/5]",
     span: "md:col-span-5",
   },
@@ -49,7 +49,7 @@ export default function Gallery() {
             From panels to charging stations.
           </h2>
           <p className="mt-5 text-[16px] md:text-[17px] text-charcoal max-w-[56ch]">
-            A few of the jobs we&apos;ve done across the Valley this year.
+            A few of the jobs we&apos;ve done across the Valley recently.
           </p>
         </ScrollFade>
 
@@ -63,7 +63,7 @@ export default function Gallery() {
                   src={p.src}
                   alt={p.alt}
                   fill
-                  quality={90}
+                  quality={85}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />

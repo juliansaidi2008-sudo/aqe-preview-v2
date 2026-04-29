@@ -89,7 +89,7 @@ export default function EVSpotlight() {
             <div className="mt-10 relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
               <Image
                 src="/images/ev-stone.jpg"
-                alt="Stone-clad meter and EV-ready electrical work by All Quality Electrical"
+                alt="Shai and the AQE crew on a recent install in the San Fernando Valley"
                 fill
                 quality={90}
                 sizes="(max-width: 1024px) 90vw, 0px"
@@ -105,7 +105,7 @@ export default function EVSpotlight() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 mb-5">
               <Image
                 src="/images/ev-stone.jpg"
-                alt="Stone-clad meter and EV-ready electrical work by All Quality Electrical"
+                alt="Shai and the AQE crew on a recent install in the San Fernando Valley"
                 fill
                 quality={90}
                 sizes="(max-width: 1024px) 0px, 480px"

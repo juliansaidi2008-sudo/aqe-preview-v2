@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Star, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import ScrollFade from "./ScrollFade";
 import { brand } from "@/config/brand";
@@ -52,6 +52,26 @@ export default function Reviews() {
   const start = page * PER_PAGE;
   const visible = REVIEWS.slice(start, start + PER_PAGE);
 
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current == null || touchStartY.current == null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    // Horizontal swipe threshold; ignore if mostly vertical (page scroll)
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) setPage((p) => Math.min(PAGES - 1, p + 1));
+      else setPage((p) => Math.max(0, p - 1));
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
   return (
     <section id="reviews" className="py-20 md:py-28 bg-surface border-y border-hairline">
       <div className="max-w-content mx-auto px-5 md:px-8">
@@ -87,7 +107,11 @@ export default function Reviews() {
         </div>
 
         {/* Carousel */}
-        <div className="mt-12 grid md:grid-cols-3 gap-4 md:gap-5">
+        <div
+          className="mt-12 grid md:grid-cols-3 gap-4 md:gap-5 touch-pan-y"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
           {visible.map((r, i) => (
             <ScrollFade key={r.name + r.when} delay={i * 80}>
               <figure className="lift h-full bg-white border border-hairline rounded-2xl p-7 md:p-8 flex flex-col">
