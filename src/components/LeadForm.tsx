@@ -136,7 +136,12 @@ export default function LeadForm() {
           required
           className="field field-on-dark"
         />
-        <select name="service" required className="field field-on-dark sm:col-span-2">
+        <select
+          name="service"
+          required
+          aria-label="What do you need?"
+          className="field field-on-dark sm:col-span-2"
+        >
           {SERVICES.map((s) => (
             <option key={s.value} value={s.value} className="text-ink">
               {s.label}

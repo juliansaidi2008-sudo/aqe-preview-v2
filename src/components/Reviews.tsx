@@ -115,7 +115,7 @@ export default function Reviews() {
           {visible.map((r, i) => (
             <ScrollFade key={r.name + r.when} delay={i * 80}>
               <figure className="lift h-full bg-white border border-hairline rounded-2xl p-7 md:p-8 flex flex-col">
-                <div className="flex gap-1" aria-label="5 out of 5 stars">
+                <div className="flex gap-1" role="img" aria-label="5 out of 5 stars">
                   {[...Array(5)].map((_, idx) => (
                     <Star
                       key={idx}
@@ -188,6 +188,7 @@ export default function Reviews() {
 function YelpPill({ size = 24 }: { size?: number }) {
   return (
     <span
+      role="img"
       aria-label="Yelp"
       className="inline-flex items-center justify-center rounded-md bg-brand text-white font-display font-bold shrink-0"
       style={{

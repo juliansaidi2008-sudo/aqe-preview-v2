@@ -17,7 +17,7 @@ export default function MobileCallBar() {
       <div className="px-3 pb-3 pt-2 bg-gradient-to-t from-bg via-bg/95 to-transparent">
         <a
           href={brand.phoneHref}
-          aria-label={`Call ${brand.name} now`}
+          aria-label={`Call ${brand.phone}`}
           className="flex items-center justify-center gap-2 h-13 py-3.5 rounded-full bg-brand text-white font-semibold text-[15px] shadow-lift hover:bg-brand-hover transition-colors"
         >
           <Phone size={16} strokeWidth={2} />
