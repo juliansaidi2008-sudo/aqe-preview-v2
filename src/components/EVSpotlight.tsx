@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check, Phone } from "lucide-react";
 import ScrollFade from "./ScrollFade";
-import LeadForm from "./LeadForm";
+import { brand } from "@/config/brand";
 import { blur } from "@/lib/imageBlurs";
 
 const evStoneBlur = blur.evStone;
@@ -120,8 +120,24 @@ export default function EVSpotlight() {
           </ScrollFade>
 
           <ScrollFade delay={200} as="div">
-            <div id="contact">
-              <LeadForm />
+            <div className="bg-white/[0.04] border border-white/12 rounded-2xl p-7 md:p-8 text-center">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-brand">
+                Free, no-obligation quote
+              </p>
+              <p className="mt-2 text-[20px] font-display font-bold text-white">
+                Shai picks up himself.
+              </p>
+              <p className="mt-2 text-[15px] text-white/70 leading-[1.6]">
+                Call or text and tell him what&apos;s going on — you&apos;ll get a fixed
+                price before anyone touches a wire.
+              </p>
+              <a
+                href={brand.phoneHref}
+                className="mt-6 inline-flex items-center justify-center gap-2 w-full h-12 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors"
+              >
+                <Phone size={18} strokeWidth={2} />
+                Call now — {brand.phone}
+              </a>
             </div>
           </ScrollFade>
         </div>

@@ -88,7 +88,7 @@ export default function Gallery() {
           {/* Editorial 6th tile — stats CTA, fills the bento and earns its space */}
           <ScrollFade delay={ITEMS.length * 60}>
             <a
-              href="#contact"
+              href={brand.phoneHref}
               className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 group bg-ink text-white flex flex-col justify-between p-6 md:p-7 lift"
             >
               {/* Soft red glow */}

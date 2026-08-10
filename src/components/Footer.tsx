@@ -15,7 +15,7 @@ const COMPANY = [
   { href: "#about", label: "About Shai" },
   { href: "#reviews", label: "Reviews" },
   { href: "#area", label: "Service area" },
-  { href: "#contact", label: "Get a quote" },
+  { href: brand.phoneHref, label: "Call now" },
 ];
 
 export default function Footer() {

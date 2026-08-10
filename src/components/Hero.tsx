@@ -39,17 +39,11 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors shadow-soft"
-              >
-                Get a free quote
-              </a>
-              <a
                 href={brand.phoneHref}
-                className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-lg border border-ink/20 text-ink font-semibold hover:border-ink/40 hover:bg-surface transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors shadow-soft"
               >
-                <Phone size={16} strokeWidth={2} />
-                Call {brand.phone}
+                <Phone size={18} strokeWidth={2} />
+                Call now — {brand.phone}
               </a>
             </div>
 

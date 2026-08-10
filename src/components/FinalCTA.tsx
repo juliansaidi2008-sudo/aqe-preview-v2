@@ -27,19 +27,13 @@ export default function FinalCTA() {
         </ScrollFade>
 
         <ScrollFade delay={120}>
-          <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center h-12 px-7 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors shadow-soft"
-            >
-              Get a free quote
-            </a>
+          <div className="mt-9 flex justify-center">
             <a
               href={brand.phoneHref}
-              className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors shadow-soft"
             >
-              <Phone size={16} strokeWidth={2} />
-              {brand.phone}
+              <Phone size={18} strokeWidth={2} />
+              Call now — {brand.phone}
             </a>
           </div>
         </ScrollFade>

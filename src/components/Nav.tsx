@@ -68,15 +68,10 @@ export default function Nav() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href={brand.phoneHref}
-              className="text-[14px] font-semibold text-ink hover:text-brand transition-colors"
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-lg bg-brand text-white hover:bg-brand-hover transition-colors text-[14px] font-semibold shadow-soft"
             >
-              {brand.phone}
-            </a>
-            <a
-              href="/#contact"
-              className="inline-flex items-center h-10 px-4 rounded-lg bg-brand text-white hover:bg-brand-hover transition-colors text-[14px] font-semibold shadow-soft"
-            >
-              Get a quote
+              <Phone size={15} strokeWidth={2} />
+              Call now
             </a>
           </div>
 
@@ -116,18 +111,12 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="/#contact"
-              onClick={() => setOpen(false)}
-              className="mt-8 inline-flex items-center justify-center h-14 rounded-xl bg-brand text-white font-semibold shadow-soft"
-            >
-              Get a free quote
-            </a>
-            <a
               href={brand.phoneHref}
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center h-12 rounded-xl border border-hairline text-ink font-medium"
+              className="mt-8 inline-flex items-center justify-center gap-2 h-14 rounded-xl bg-brand text-white font-semibold shadow-soft"
             >
-              <Phone size={16} className="mr-2" /> {brand.phone}
+              <Phone size={18} strokeWidth={2} />
+              Call now — {brand.phone}
             </a>
           </nav>
         </div>

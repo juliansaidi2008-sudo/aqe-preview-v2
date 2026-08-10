@@ -76,52 +76,6 @@ body {
   box-shadow: 0 4px 8px rgba(19, 23, 36, 0.06), 0 12px 32px rgba(19, 23, 36, 0.08);
 }
 
-/* Form fields */
-.field {
-  background: #ffffff;
-  border: 1px solid var(--hairline);
-  border-radius: 10px;
-  padding: 0 14px;
-  height: 48px;
-  font-size: 16px;
-  color: var(--ink);
-  width: 100%;
-  transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
-  font-family: var(--font-inter), system-ui, sans-serif;
-}
-.field::placeholder {
-  color: #9aa0ad;
-}
-.field:focus {
-  outline: none;
-  border-color: var(--ink);
-  box-shadow: 0 0 0 3px rgba(192, 10, 11, 0.15);
-}
-select.field {
-  appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234A5163' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-}
-.field-on-dark {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.field-on-dark::placeholder {
-  color: rgba(255, 255, 255, 0.55);
-}
-.field-on-dark:focus {
-  border-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 0 0 3px rgba(192, 10, 11, 0.35);
-}
-select.field-on-dark {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
-}
-
 /* Selection */
 ::selection {
   background: rgba(192, 10, 11, 0.85);
