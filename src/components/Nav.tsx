@@ -6,11 +6,12 @@ import Logo from "./Logo";
 import { brand } from "@/config/brand";
 
 const ITEMS = [
-  { href: "#services", label: "Services" },
-  { href: "#ev", label: "EV chargers" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#about", label: "About" },
-  { href: "#area", label: "Service area" },
+  { href: "/#services", label: "Services" },
+  { href: "/#ev", label: "EV chargers" },
+  { href: "/work", label: "Our work" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/#about", label: "About" },
+  { href: "/#area", label: "Service area" },
 ];
 
 export default function Nav() {
@@ -48,7 +49,7 @@ export default function Nav() {
         }}
       >
         <div className="max-w-content mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between">
-          <a href="#top" aria-label={`${brand.name} — home`} className="inline-flex items-center">
+          <a href="/" aria-label={`${brand.name} — home`} className="inline-flex items-center">
             <Logo height={32} className="md:h-9" />
           </a>
 
@@ -72,7 +73,7 @@ export default function Nav() {
               {brand.phone}
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="inline-flex items-center h-10 px-4 rounded-lg bg-brand text-white hover:bg-brand-hover transition-colors text-[14px] font-semibold shadow-soft"
             >
               Get a quote
@@ -115,7 +116,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-8 inline-flex items-center justify-center h-14 rounded-xl bg-brand text-white font-semibold shadow-soft"
             >

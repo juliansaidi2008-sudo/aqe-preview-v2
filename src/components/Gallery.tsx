@@ -54,6 +54,13 @@ export default function Gallery() {
           <p className="mt-5 text-[16px] md:text-[17px] text-charcoal max-w-[56ch]">
             A few real jobs from across the Valley.
           </p>
+          <a
+            href="/work"
+            className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand hover:gap-2.5 transition-all"
+          >
+            View the full gallery
+            <ArrowRight size={16} strokeWidth={2} />
+          </a>
         </ScrollFade>
 
         <div className="mt-12 md:mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
