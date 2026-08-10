@@ -125,10 +125,10 @@ export default function EVSpotlight() {
                 Free, no-obligation quote
               </p>
               <p className="mt-2 text-[20px] font-display font-bold text-white">
-                Shai picks up himself.
+                Shai&apos;s team picks up.
               </p>
               <p className="mt-2 text-[15px] text-white/70 leading-[1.6]">
-                Call or text and tell him what&apos;s going on — you&apos;ll get a fixed
+                Call or text and tell us what&apos;s going on — you&apos;ll get a fixed
                 price before anyone touches a wire.
               </p>
               <a
