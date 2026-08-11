@@ -4,11 +4,19 @@ import { brand } from "@/config/brand";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const BASE = brand.siteUrl;
-  const sections = ["", "#services", "#ev", "#reviews", "#about", "#area"];
-  return sections.map((s, i) => ({
-    url: `${BASE}/${s}`,
+  const entries = [
+    { path: "", priority: 1.0 },
+    { path: "#services", priority: 0.8 },
+    { path: "#ev", priority: 0.8 },
+    { path: "#reviews", priority: 0.8 },
+    { path: "#about", priority: 0.8 },
+    { path: "#area", priority: 0.8 },
+    { path: "work", priority: 0.9 },
+  ];
+  return entries.map(({ path, priority }) => ({
+    url: `${BASE}/${path}`,
     lastModified: now,
-    changeFrequency: i === 0 ? "monthly" : "monthly",
-    priority: i === 0 ? 1.0 : 0.8,
+    changeFrequency: "monthly",
+    priority,
   }));
 }

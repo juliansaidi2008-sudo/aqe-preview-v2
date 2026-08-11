@@ -3,18 +3,18 @@ import Logo from "./Logo";
 import { brand } from "@/config/brand";
 
 const SERVICES = [
-  { href: "#ev", label: "EV charger installation" },
-  { href: "#services", label: "Panel upgrades" },
-  { href: "#services", label: "Whole-home rewiring" },
-  { href: "#services", label: "Recessed lighting" },
-  { href: "#services", label: "Diagnostics & repair" },
-  { href: "#services", label: "Remodels & additions" },
+  { href: "/#ev", label: "EV charger installation" },
+  { href: "/#services", label: "Panel upgrades" },
+  { href: "/#services", label: "Whole-home rewiring" },
+  { href: "/#services", label: "Recessed lighting" },
+  { href: "/#services", label: "Diagnostics & repair" },
+  { href: "/#services", label: "Remodels & additions" },
 ];
 
 const COMPANY = [
-  { href: "#about", label: "About Shai" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#area", label: "Service area" },
+  { href: "/#about", label: "About Shai" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/#area", label: "Service area" },
   { href: brand.phoneHref, label: "Call now" },
 ];
 
