@@ -34,7 +34,7 @@ export default function Hero() {
 
             <p className="mt-6 text-[17px] md:text-[19px] text-charcoal leading-[1.55] max-w-[58ch] text-pretty">
               Licensed electricians serving Canoga Park, Calabasas and the San Fernando
-              Valley. Family-run, no-upsell pricing, work guaranteed.
+              Valley. Family-run, no-upsell pricing, backed by a {brand.warranty}.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">

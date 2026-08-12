@@ -48,8 +48,8 @@ export default function Problem() {
 
         <ScrollFade delay={240} className="mt-10 md:mt-12">
           <p className="text-[15px] md:text-[16px] text-charcoal max-w-2xl">
-            Twenty years in, Shai picks up the phone himself. The job gets done right
-            the first time — or it gets done again, on us.
+            Twenty years in, Shai and his team still answer the phone themselves.
+            The job gets done right the first time — or it gets done again, on us.
           </p>
         </ScrollFade>
       </div>

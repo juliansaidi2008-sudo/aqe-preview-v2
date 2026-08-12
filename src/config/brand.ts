@@ -42,6 +42,9 @@ export const brand = {
   rating: 4.9,
   reviewCount: 60,
 
+  // Labor only — not a materials/parts or manufacturer-defect warranty.
+  warranty: "10-year labor warranty",
+
   license: {
     type: "CA C-10 Electrical Contractor",
     note: "License available on request",

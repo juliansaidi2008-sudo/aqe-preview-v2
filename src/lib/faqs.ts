@@ -1,3 +1,5 @@
+import { brand } from "@/config/brand";
+
 export type FAQ = { q: string; a: string };
 
 /**
@@ -16,12 +18,16 @@ export const FAQS: ReadonlyArray<FAQ> = [
     a: "Most calls get a same-day or next-day visit. Emergencies during business hours, we'll move things around.",
   },
   {
+    q: "Is your work under warranty?",
+    a: `Yes — every job is backed by our ${brand.warranty}. If an issue comes back due to our workmanship, we'll return and fix it at no charge for labor.`,
+  },
+  {
     q: "Do you pull permits?",
     a: "Always, when one's required. Panel upgrades, EV chargers on dedicated circuits, sub-panels, ADUs — permit pulled, inspector signs off, you keep the paperwork.",
   },
   {
     q: "How much does an EV charger install cost?",
-    a: "Typical installs run $650–$1,400 depending on panel space, run length, and whether we need to upgrade the service. We'll give you a fixed written quote before we start.",
+    a: "It depends on your panel space, run length, and whether the service needs an upgrade — Shai's team will give you a fixed, written quote before any work starts.",
   },
   {
     q: "What brands of EV chargers do you install?",

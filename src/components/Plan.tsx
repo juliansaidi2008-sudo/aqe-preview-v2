@@ -1,10 +1,11 @@
 import ScrollFade from "./ScrollFade";
+import { brand } from "@/config/brand";
 
 const STEPS = [
   {
     n: "1",
     title: "Call or text",
-    body: "Tell Shai what's going on. He picks up himself, most of the time.",
+    body: "Tell Shai or his team what's going on — someone always picks up.",
   },
   {
     n: "2",
@@ -14,7 +15,7 @@ const STEPS = [
   {
     n: "3",
     title: "Done right, today",
-    body: "Most jobs finish in one visit. Permits and inspection handled when needed.",
+    body: `Most jobs finish in one visit, backed by a ${brand.warranty}.`,
   },
 ];
 

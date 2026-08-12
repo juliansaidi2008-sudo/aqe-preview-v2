@@ -23,9 +23,9 @@ export default function Home() {
         <Hero />
         <Problem />
         <Services />
-        <EVSpotlight />
         <Plan />
         <Gallery />
+        <EVSpotlight />
         <Reviews />
         <About />
         <ServiceArea />

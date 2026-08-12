@@ -45,8 +45,8 @@ export default function About() {
             >
               <p>
                 Shai started All Quality Electrical out of his truck in 2003. Two
-                decades later, the same hands still pick up the phone, write the
-                quotes, and run service most days of the week.
+                decades later, he and the crew he&apos;s trained still answer the
+                phone, write the quotes, and run service most days of the week.
               </p>
               <p>
                 The crew is small on purpose — Shai, his son, and a couple of techs

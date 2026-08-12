@@ -69,24 +69,6 @@ export default function EVSpotlight() {
             </figure>
           </ScrollFade>
 
-          <ScrollFade delay={260}>
-            {/* Pricing strip */}
-            <div className="mt-8 inline-flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-2 bg-white/[0.06] border border-white/12 rounded-xl px-5 py-4">
-              <div>
-                <p className="font-display font-bold text-[20px] text-white leading-none">
-                  $650 – $1,400
-                </p>
-                <p className="text-[12px] text-white/60 mt-1 leading-none">
-                  Typical install
-                </p>
-              </div>
-              <span className="hidden sm:block w-px h-9 bg-white/15" aria-hidden />
-              <p className="text-[14px] text-white/85">
-                Free quote · No-obligation
-              </p>
-            </div>
-          </ScrollFade>
-
           {/* Photo on mobile only — appears below copy */}
           <ScrollFade delay={320} className="lg:hidden">
             <div className="mt-10 relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">

@@ -22,7 +22,7 @@ export default function FinalCTA() {
             Stop putting it off. <span className="text-brand">Get it fixed right.</span>
           </h2>
           <p className="mt-5 text-[16px] md:text-[18px] text-white/70 max-w-2xl mx-auto">
-            Free, written quotes — usually same-day. Shai picks up.
+            Free, written quotes — usually same-day. Shai&apos;s team picks up.
           </p>
         </ScrollFade>
 
