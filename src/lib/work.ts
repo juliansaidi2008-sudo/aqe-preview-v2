@@ -43,4 +43,5 @@ export const WORK_PHOTOS: WorkPhoto[] = [
   { src: "/images/work/aqe-work-33.jpg", alt: "Technician wiring an outdoor condenser unit", caption: "Condenser hookup", blurDataURL: workBlur.img33 },
   { src: "/images/work/aqe-work-34.jpg", alt: "Two technicians working on a utility pole service connection", caption: "Utility pole service connection", blurDataURL: workBlur.img34 },
   { src: "/images/work/aqe-work-35.jpg", alt: "Modern home exterior lit with wall sconces and path lighting", caption: "Exterior lighting · modern remodel", blurDataURL: workBlur.img35 },
+  { src: "/images/work/aqe-work-36.jpg", alt: "The full AQE crew at a restaurant table, all wearing black AQE shirts", caption: "The whole crew", blurDataURL: workBlur.img36 },
 ];
