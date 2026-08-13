@@ -28,7 +28,6 @@ export const WORK_PHOTOS: WorkPhoto[] = [
   { src: "/images/work/aqe-work-19.jpg", alt: "Poolside string lights and tree lighting at night", caption: "Poolside string & tree lighting", blurDataURL: workBlur.img19 },
   { src: "/images/work/aqe-work-20.jpg", alt: "Technician troubleshooting a garage ceiling outlet", caption: "GFCI troubleshooting · garage", blurDataURL: workBlur.img20 },
   { src: "/images/work/aqe-work-21.jpg", alt: "Technician installing a new meter panel outdoors", caption: "New meter panel install", blurDataURL: workBlur.img21 },
-  { src: "/images/work/aqe-work-22.jpg", alt: "Labeled home-run wiring in an open stud wall", caption: "Labeled home-run wiring", blurDataURL: workBlur.img22 },
   { src: "/images/work/aqe-work-23.jpg", alt: "Technician testing wiring in an open garage ceiling", caption: "Wiring test · garage ceiling", blurDataURL: workBlur.img23 },
   { src: "/images/work/aqe-work-24.jpg", alt: "The AQE crew with a box of donuts after a job", caption: "The AQE crew", blurDataURL: workBlur.img24 },
   { src: "/images/work/aqe-work-25.jpg", alt: "AQE service van parked on a residential street", caption: "On the road · AQE van", blurDataURL: workBlur.img25 },
