@@ -37,7 +37,7 @@ const SERVICES = [
   {
     Icon: Wrench,
     title: "Remodels & additions",
-    body: "Adding an ADU, finishing a basement, opening a wall? Coordinate-with-GC electrical from rough to trim.",
+    body: "Adding an ADU, finishing a basement, or opening a wall? We handle the electrical from rough-in through final fixtures and work alongside your contractor when needed.",
   },
 ];
 

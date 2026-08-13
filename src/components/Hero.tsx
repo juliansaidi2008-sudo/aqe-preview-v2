@@ -21,20 +21,21 @@ export default function Hero() {
           {/* Copy */}
           <div className="lg:col-span-7">
             <p className="eyebrow mb-5">
-              {brand.address.city} · {brand.address.state}
+              Serving Woodland Hills + the San Fernando Valley
             </p>
 
             <h1 className="font-display font-extrabold text-h1-m md:text-h1-d text-ink tracking-[-0.03em] leading-[1.02]">
               Your electrical issue.
               <br />
-              Fixed today.
+              Handled the right way.
               <br className="md:hidden" />
-              <span className="text-brand md:ml-[0.4ch]">By Shai&rsquo;s team personally.</span>
+              <span className="text-brand md:ml-[0.4ch]">With respect for your home.</span>
             </h1>
 
             <p className="mt-6 text-[17px] md:text-[19px] text-charcoal leading-[1.55] max-w-[58ch] text-pretty">
-              Licensed electricians serving Canoga Park, Calabasas and the San Fernando
-              Valley. Family-run, no-upsell pricing, backed by a {brand.warranty}.
+              Licensed electricians serving homeowners throughout Woodland Hills,
+              Calabasas and the San Fernando Valley. Family-run, straightforward
+              service, backed by a {brand.warranty}.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">

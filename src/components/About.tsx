@@ -49,11 +49,11 @@ export default function About() {
                 phone, write the quotes, and run service most days of the week.
               </p>
               <p>
-                The crew is small on purpose — Shai, his son, and a couple of techs
-                he&apos;s trained from the wires up. That&apos;s why the same
-                family that wired your panel in 2010 can be the one installing
-                your EV charger today, your ADU sub-panel next year, and your solar
-                disconnect after that.
+                The crew is intentionally small — Shai and a team of experienced
+                electricians he&apos;s personally trained. That keeps the standard
+                of workmanship, communication, and care consistent on every job,
+                whether it&apos;s a panel upgrade, an EV charger, or a full ADU
+                sub-panel.
               </p>
               <p className="text-ink font-semibold">
                 Family-run. Licensed. Insured. Answering the phone.

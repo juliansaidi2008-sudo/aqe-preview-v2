@@ -4,7 +4,7 @@
 export const brand = {
   name: "All Quality Electrical",
   shortName: "AQE",
-  tagline: "Your electrical issue. Fixed today. By Shai's team personally.",
+  tagline: "Your electrical issue. Handled the right way, with respect for your home.",
   established: 2003,
 
   phone: "(818) 657-9605",
@@ -12,7 +12,8 @@ export const brand = {
   email: "allqualityelectrical@gmail.com",
 
   address: {
-    street: "7049 Owensmouth Ave",
+    street: "6931 Topanga Canyon Blvd",
+    unit: "Unit 3",
     city: "Canoga Park",
     state: "CA",
     zip: "91303",
@@ -21,15 +22,15 @@ export const brand = {
 
   hours: {
     days: "Mon–Sat",
-    open: "9:00 AM",
+    open: "8:00 AM",
     close: "6:00 PM",
-    label: "Mon–Sat, 9am–6pm",
+    label: "Mon–Sat, 8am–6pm",
   },
 
   cities: [
+    "Woodland Hills",
     "Canoga Park",
     "Calabasas",
-    "Woodland Hills",
     "West Hills",
     "Tarzana",
     "Encino",
@@ -54,9 +55,9 @@ export const brand = {
 
   // Map iframe src — real Google Maps, no hand-drawn SVG nonsense.
   mapsEmbed:
-    "https://www.google.com/maps?q=7049+Owensmouth+Ave,+Canoga+Park,+CA+91303&z=11&output=embed",
+    "https://www.google.com/maps?q=6931+Topanga+Canyon+Blvd,+Canoga+Park,+CA+91303&z=11&output=embed",
   mapsLink:
-    "https://www.google.com/maps/place/7049+Owensmouth+Ave,+Canoga+Park,+CA+91303",
+    "https://www.google.com/maps/place/6931+Topanga+Canyon+Blvd,+Canoga+Park,+CA+91303",
 } as const;
 
 export type Brand = typeof brand;

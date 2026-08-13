@@ -77,7 +77,7 @@ const jsonLd = {
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: brand.address.street,
+    streetAddress: `${brand.address.street}, ${brand.address.unit}`,
     addressLocality: brand.address.city,
     addressRegion: brand.address.state,
     postalCode: brand.address.zip,
@@ -87,7 +87,7 @@ const jsonLd = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
+      opens: "08:00",
       closes: "18:00",
     },
   ],

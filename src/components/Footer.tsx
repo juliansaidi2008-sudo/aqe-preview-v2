@@ -98,7 +98,7 @@ export default function Footer() {
               <li className="flex items-start gap-2 py-3">
                 <MapPin size={14} strokeWidth={2} className="text-brand mt-1 shrink-0" />
                 <span>
-                  {brand.address.street}
+                  {brand.address.street}, {brand.address.unit}
                   <br />
                   {brand.address.city}, {brand.address.state} {brand.address.zip}
                 </span>

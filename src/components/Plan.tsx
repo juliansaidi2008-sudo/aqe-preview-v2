@@ -14,8 +14,8 @@ const STEPS = [
   },
   {
     n: "3",
-    title: "Done right, today",
-    body: `Most jobs finish in one visit, backed by a ${brand.warranty}.`,
+    title: "Done right. Respectfully.",
+    body: `Careful work, clear communication, and a ${brand.warranty}.`,
   },
 ];
 

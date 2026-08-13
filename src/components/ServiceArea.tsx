@@ -9,7 +9,7 @@ export default function ServiceArea() {
         <ScrollFade className="max-w-2xl">
           <p className="eyebrow">Service area</p>
           <h2 className="mt-4 font-display font-bold text-h2-m md:text-h2-d text-ink text-balance">
-            From Canoga Park to Sherman Oaks — we&apos;re likely already on your block.
+            From Woodland Hills to Canoga Park — we&apos;re likely already on your block.
           </h2>
         </ScrollFade>
 

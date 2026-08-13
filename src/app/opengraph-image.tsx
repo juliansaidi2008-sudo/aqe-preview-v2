@@ -117,8 +117,8 @@ export default async function OG() {
               gap: 18,
             }}
           >
-            <span style={{ color: "#FAFAF7" }}>Fixed today.</span>
-            <span style={{ color: "#FF5A5C" }}>By Shai’s team personally.</span>
+            <span style={{ color: "#FAFAF7" }}>Handled the right way.</span>
+            <span style={{ color: "#FF5A5C" }}>With respect for your home.</span>
           </div>
         </div>
 
