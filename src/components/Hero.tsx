@@ -6,7 +6,7 @@ import { blur } from "@/lib/imageBlurs";
 const TRUST = [
   { Icon: ShieldCheck, label: `Licensed CA C-10` },
   { Icon: Clock, label: "Same-day service" },
-  { Icon: Wrench, label: "Family-run, 20+ yrs" },
+  { Icon: Wrench, label: "Family-run, since 2009" },
   { Icon: Star, label: `${brand.rating}★ on Yelp` },
 ];
 

@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 const title = `${brand.name} | Licensed Electricians in ${brand.address.city}, ${brand.address.state}`;
-const description = `Licensed electricians serving ${brand.address.city}, Calabasas, and the San Fernando Valley for 20+ years. EV charger install, panel upgrades, home rewiring. Call ${brand.phone}.`;
+const description = `Licensed electricians serving ${brand.address.city}, Calabasas, and the San Fernando Valley since ${brand.established}. Panel upgrades, rewiring, lighting, and EV charger installs. Call ${brand.phone}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(brand.siteUrl),

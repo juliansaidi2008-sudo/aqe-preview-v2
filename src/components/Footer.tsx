@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import { brand } from "@/config/brand";
 
 const SERVICES = [
-  { href: "/#ev", label: "EV charger installation" },
+  { href: "/#services", label: "EV charger installation" },
   { href: "/#services", label: "Panel upgrades" },
   { href: "/#services", label: "Whole-home rewiring" },
   { href: "/#services", label: "Recessed lighting" },
@@ -29,7 +29,7 @@ export default function Footer() {
             <Logo height={36} />
             <p className="mt-5 text-[14px] text-charcoal leading-relaxed max-w-xs">
               Family-run, licensed electricians serving the San Fernando Valley
-              for 20+ years.
+              since 2009.
             </p>
           </div>
 

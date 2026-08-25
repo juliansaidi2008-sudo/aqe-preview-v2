@@ -153,7 +153,7 @@ export default async function OG() {
             {brand.rating} stars on Yelp · {brand.reviewCount}+ reviews
           </span>
           <span style={{ display: "flex", opacity: 0.4 }}>·</span>
-          <span style={{ display: "flex" }}>20+ years, family-run</span>
+          <span style={{ display: "flex" }}>Family-run since {brand.established}</span>
         </div>
       </div>
     ),

@@ -4,7 +4,7 @@ import { brand } from "@/config/brand";
 import { blur } from "@/lib/imageBlurs";
 
 const STATS = [
-  { k: "20+", v: "Years in the Valley" },
+  { k: "2009", v: "Founded" },
   { k: "2,400+", v: "Valley homes wired" },
   { k: `${brand.rating}★`, v: `From ${brand.reviewCount}+ reviews` },
 ];
@@ -44,8 +44,8 @@ export default function About() {
               className="mt-7 space-y-5 text-[16px] md:text-[17px] leading-[1.7] text-charcoal max-w-[60ch]"
             >
               <p>
-                Shai started All Quality Electrical out of his truck in 2003. Two
-                decades later, he and the crew he&apos;s trained still answer the
+                Shai started All Quality Electrical out of his truck in 2009.
+                Since then, he and the crew he&apos;s trained still answer the
                 phone, write the quotes, and run service most days of the week.
               </p>
               <p>

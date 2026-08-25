@@ -5,7 +5,7 @@ export const brand = {
   name: "All Quality Electrical",
   shortName: "AQE",
   tagline: "Your electrical issue. Handled the right way, with respect for your home.",
-  established: 2003,
+  established: 2009,
 
   phone: "(818) 657-9605",
   phoneHref: "tel:18186579605",

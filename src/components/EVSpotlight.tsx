@@ -7,15 +7,15 @@ import { blur } from "@/lib/imageBlurs";
 const evStoneBlur = blur.evStone;
 
 const POINTS = [
-  "Load calculation + permit pulled before we touch a wire",
-  "NEMA 14-50 or hardwired — your choice, both code-compliant",
-  "Cable run hidden through the wall when possible (no surface ugly)",
-  "City inspection scheduled and passed before final invoice",
+  "We assess your panel, wiring, and load before we quote anything",
+  "You get a clear scope and a fixed, written price for the work",
+  "Panel, wiring, or lighting work completed to code — permit-pulled when required",
+  "Every job is tested and walked through with you before we call it done",
 ];
 
 export default function EVSpotlight() {
   return (
-    <section id="ev" className="relative bg-ink text-white overflow-hidden">
+    <section id="process" className="relative bg-ink text-white overflow-hidden">
       {/* Soft red glow corner */}
       <span
         aria-hidden
@@ -31,16 +31,17 @@ export default function EVSpotlight() {
         <div className="lg:col-span-7">
           <ScrollFade>
             <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-brand">
-              EV charger install
+              Our process
             </p>
             <h2 className="mt-4 font-display font-bold text-h2-m md:text-h2-d text-white text-balance">
-              Going electric? Get charging at home in{" "}
-              <span className="text-brand">2 hours</span>.
+              From assessment to{" "}
+              <span className="text-brand">final fixture</span>.
             </h2>
             <p className="mt-5 text-[17px] md:text-[18px] text-white/75 leading-[1.6] max-w-[58ch]">
-              Most installs are a half-day, permit included, inspector-approved.
-              We&apos;ve done it 400+ times in the Valley — Tesla, Rivian, Ford, Hyundai,
-              Kia, doesn&apos;t matter.
+              Whether it&apos;s a panel upgrade, a full rewire, or new lighting
+              throughout the house, every project starts with the same process —
+              assess what&apos;s there, plan the scope, do the work right, and test
+              everything before we walk away.
             </p>
           </ScrollFade>
 
@@ -60,11 +61,11 @@ export default function EVSpotlight() {
           <ScrollFade delay={200}>
             <figure className="mt-8 border-l-2 border-brand pl-5">
               <blockquote className="text-[16px] md:text-[17px] italic text-white/85 leading-[1.55]">
-                &ldquo;EV charger was installed in less than 2 hours. Excellent
-                communication. Very good pricing.&rdquo;
+                &ldquo;Shai and his team kept in touch with me from start to finish
+                and did an outstanding job.&rdquo;
               </blockquote>
               <figcaption className="mt-2 text-[13px] text-white/60">
-                — Stephanie S., Yelp · Dec 2025
+                — Thomas S., Yelp · Mar 2026
               </figcaption>
             </figure>
           </ScrollFade>

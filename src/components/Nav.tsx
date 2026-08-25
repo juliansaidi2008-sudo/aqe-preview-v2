@@ -7,7 +7,7 @@ import { brand } from "@/config/brand";
 
 const ITEMS = [
   { href: "/#services", label: "Services" },
-  { href: "/#ev", label: "EV chargers" },
+  { href: "/#process", label: "Our process" },
   { href: "/work", label: "Our work" },
   { href: "/#reviews", label: "Reviews" },
   { href: "/#about", label: "About" },
