@@ -55,7 +55,7 @@ export default function WorkGallery({ photos }: { photos: WorkPhoto[] }) {
                 placeholder="blur"
                 blurDataURL={p.blurDataURL}
               />
-              <span className="absolute inset-x-0 bottom-0 p-3 text-white text-[12px] font-medium bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="absolute inset-x-0 bottom-0 p-3 text-white text-[12px] font-medium bg-gradient-to-t from-black/70 via-black/20 to-transparent">
                 {p.caption}
               </span>
             </button>
