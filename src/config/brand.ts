@@ -9,6 +9,7 @@ export const brand = {
 
   phone: "(818) 657-9605",
   phoneHref: "tel:18186579605",
+  textHref: "sms:+18186579605",
   email: "allqualityelectrical@gmail.com",
 
   address: {

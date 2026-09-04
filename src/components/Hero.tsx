@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { Phone, ShieldCheck, Clock, Wrench, Star } from "lucide-react";
+import { MessageCircle, Phone, ShieldCheck, Clock, Wrench, Star } from "lucide-react";
 import { brand } from "@/config/brand";
 import { blur } from "@/lib/imageBlurs";
-import CallbackForm from "@/components/CallbackForm";
 
 const TRUST = [
   { Icon: ShieldCheck, label: `Licensed CA C-10` },
@@ -39,15 +38,24 @@ export default function Hero() {
               service, backed by a {brand.warranty}.
             </p>
 
-            <div className="relative mt-8 flex items-start gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={brand.phoneHref}
-                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-brand px-6 font-semibold text-white shadow-soft transition-colors hover:bg-brand-hover"
+                aria-label={`Call ${brand.phone}`}
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors shadow-soft"
               >
                 <Phone size={18} strokeWidth={2} />
-                Call now<span className="md:hidden"> — {brand.phone}</span>
+                <span className="md:hidden">Call to Schedule</span>
+                <span className="hidden md:inline text-[17px]">Call {brand.phone}</span>
               </a>
-              <CallbackForm />
+              <a
+                href={brand.textHref}
+                aria-label={`Text ${brand.shortName} at ${brand.phone}`}
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg border border-hairline bg-white text-ink font-semibold hover:border-ink/20 hover:bg-surface transition-colors shadow-soft"
+              >
+                <MessageCircle size={18} strokeWidth={2} />
+                Text AQE
+              </a>
             </div>
 
             {/* Trust strip */}
