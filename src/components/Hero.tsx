@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Phone, ShieldCheck, Clock, Wrench, Star } from "lucide-react";
 import { brand } from "@/config/brand";
 import { blur } from "@/lib/imageBlurs";
+import CallbackForm from "@/components/CallbackForm";
 
 const TRUST = [
   { Icon: ShieldCheck, label: `Licensed CA C-10` },
@@ -38,14 +39,15 @@ export default function Hero() {
               service, backed by a {brand.warranty}.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="relative mt-8 flex items-start gap-3">
               <a
                 href={brand.phoneHref}
-                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-brand text-white font-semibold hover:bg-brand-hover transition-colors shadow-soft"
+                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-brand px-6 font-semibold text-white shadow-soft transition-colors hover:bg-brand-hover"
               >
                 <Phone size={18} strokeWidth={2} />
-                Call now — {brand.phone}
+                Call now<span className="md:hidden"> — {brand.phone}</span>
               </a>
+              <CallbackForm />
             </div>
 
             {/* Trust strip */}
